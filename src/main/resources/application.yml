@@ -1,7 +1,35 @@
+server:
+  port: 8000   #여기 적지 않으면 8080에 context-path:/
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/ #컨트롤러가 리턴할 때 앞에 붙여주는 경로명 
+      suffix: .jsp #컨트롤러가 리턴할 때 뒤에 붙여주는 경로명 
+      
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
     username: cos
     password: cos1234
     
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update #프로젝트를 시작할 때마다 테이블을 새로 만들겠다=>최초에만 create지 나중에는 update로 바꿔놔야 데이터 안 날아가 
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #엔티티(테이블)만들때 변수명 그대로 컬럼명에 넣어준다 myEmail/ SpringPhysicalNamingStrategy전략을 쓰면 my-email
+      use-new-id-generator-mappings: false #시퀀스, auto_increment 방식을 결정하는것=>true면 jpa의 기본 넘버링 전략 사용, false면 아님
+    show-sql: true #프로젝트 런 하면 테이블 생성한걸 sql 보여줘 콘솔창에
+    properties:
+      hibernate.format_sql: true #테이블 생성할때 한줄로 나오는게 아니라 이쁘게 정렬돼서 나와
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
