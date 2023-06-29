@@ -21,7 +21,6 @@ public interface UserRepository extends JpaRepository<User, Integer> //제네릭
 
 
 
-
 //JPA 네이밍 전략
 //SELECT * FROM user WHERE username = ?1 AND password=?2; 인 쿼리가 동작한다
 //User findByUsernameAndPassword(String username, String password);

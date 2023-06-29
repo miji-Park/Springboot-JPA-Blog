@@ -19,7 +19,6 @@ public class UserApiController {
 	@Autowired
 	private UserService userService;
 
-
 	//@Autowired private HttpSession session; //세션 객체는 스프링 컨테이너가 빈으로 등록을해서 갖고 있다
 	
 

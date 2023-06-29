@@ -17,9 +17,7 @@ import com.cos.blog.config.auth.PrincipalDetailService;
 // 빈 등록 : 스프링 컨테이너에서 객체를 관리할 수 있게 하는 것
 
 @Configuration // 빈등록 (IoC관리)
-
 @EnableWebSecurity // 시큐리티에 필터가 등록이 된다.= 이미 활성화된 스프링 시큐리티의 어떤 설정을 해당 파일(SecurityConfig)에서 하겠다 
-
 //Controller에서 특정 권한이 있는 유저만 접근을 허용하려면 @PreAuthorize 어노테이션을 사용하는데, 해당 어노테이션을 활성화 시키는 어노테이션이다.
 @EnableGlobalMethodSecurity(prePostEnabled = true) //특정 주소로 접근을 하면 권한 및 인증을 미리 체크하겠다는 뜻
 //위 3개 어노테이션은 세트
@@ -45,7 +43,7 @@ public class SecurityConfig{
 //	 auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 //	 //222.principalDetailService가 로그인 요청을 하고 리턴이 되면 passwordEncoder로 해서 사용자가 적은패스워드를 encodePWD()로 암호화 후 DB랑 비교 //비교가 끝나서 다 맞으면 스프링 시큐리티영역에 우리 유저 정보가principalDetail로 감싸져서 저장이 된다
 //	 }
-	
+
 	
 	@Bean
 	 public SecurityFilterChain configure(HttpSecurity http) throws Exception {
