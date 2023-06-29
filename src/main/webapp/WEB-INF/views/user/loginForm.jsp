@@ -4,7 +4,7 @@
 <div class="container">
 
 	<!-- <form action="/blog/api/user/login">로그인은 select 하는거 =>js로 할거라서 그냥 폼으로 해 -->
-	<form action="#" method="post">
+	<form action="/auth/loginProc" method="post">
 		<div class="form-group">
 			<label for="username">Username</label> 
 			<input type="text" name="username" class="form-control" placeholder="Enter username" id="username">

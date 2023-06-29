@@ -1,7 +1,6 @@
 package com.cos.blog.service;
 
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,7 +43,7 @@ public class UserService {
 	}
 	
 	//전통적인 로그인처리
-//	@Transactional(readOnly = true)//Select할때 트랜잭션 시작, 서비스 종료시에 트랜잭션 종료(정합성)
+//	@Transactional(readOnly = true)//Select할때 트랜잭션 시작, 서비스 종료시에 트랜잭션 종료(이 때까지 정합성 유지시킨다)
 //	public User 로그인(User user) {
 //		return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
 //	}
