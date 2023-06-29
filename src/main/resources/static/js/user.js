@@ -31,6 +31,7 @@ let index = {
 		}).done(function(resp){
 			alert("회원가입이 완료되었습니다.");
 			//console.log(resp); =>UserApiController에서 리턴하는 값
+
 			location.href="/";	
 		}).fail(function(error){
 			alert(JSON.stringify(error));
