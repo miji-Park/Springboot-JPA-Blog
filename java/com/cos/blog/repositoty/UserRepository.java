@@ -20,7 +20,7 @@ public interface UserRepository extends JpaRepository<User, Integer> //제네릭
 
 
 
-//기본적인 CRUD는 이렇게만 만들어줘도 JpaRepository가 모든 함수를 다 들고있어서 가능하다
+
 
 //JPA 네이밍 전략
 //SELECT * FROM user WHERE username = ?1 AND password=?2; 인 쿼리가 동작한다
