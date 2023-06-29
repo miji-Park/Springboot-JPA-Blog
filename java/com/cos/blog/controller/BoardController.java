@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.cos.blog.service.BoardService;
 
 
+
 @Controller
 public class BoardController {
 	

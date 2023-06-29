@@ -12,6 +12,7 @@ import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.service.UserService;
 
+
 @RestController // 데이터만 리턴해줄거라서
 public class UserApiController {
 
@@ -47,4 +48,5 @@ public class UserApiController {
 //	 }
 //	 return new ResponseDto<Integer>(HttpStatus.OK.value(),1); //세션을 만들고 1을 응답하면 
 //  }
+
 }

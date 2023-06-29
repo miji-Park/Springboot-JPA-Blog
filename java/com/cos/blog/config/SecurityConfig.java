@@ -43,7 +43,7 @@ public class SecurityConfig{
 //	 auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 //	 //222.principalDetailService가 로그인 요청을 하고 리턴이 되면 passwordEncoder로 해서 사용자가 적은패스워드를 encodePWD()로 암호화 후 DB랑 비교 //비교가 끝나서 다 맞으면 스프링 시큐리티영역에 우리 유저 정보가principalDetail로 감싸져서 저장이 된다
 //	 }
-	 
+
 	
 	@Bean
 	 public SecurityFilterChain configure(HttpSecurity http) throws Exception {

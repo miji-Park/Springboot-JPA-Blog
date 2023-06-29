@@ -35,7 +35,6 @@
 </ul>
 
 
-
 </div>
 
 <%@ include file="layout/footer.jsp"%>
