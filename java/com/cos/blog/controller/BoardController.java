@@ -14,4 +14,11 @@ public class BoardController {
 		//System.out.println("로그인 사용자 아이디:" + principal.getUsername());  //로그인 됐느지 확인위해
 		return "index";
 	}
+	
+	//USER 권한이 필요
+	@GetMapping("/board/saveForm")
+	public String saveForm() {
+			return "board/saveForm";
+		
+	}
 }
