@@ -3,9 +3,13 @@ let index = {
 		$("#btn-save").on("click",()=>{	// function(){} , ()=>{} this를 바인딩하기 위해서!!
 			this.save(); //on 첫번째 파라미터:어떤 이벤트, 두번째 파라미터: 무엇을 할건지
 		}); 
-//		$("#btn-login").on("click",()=>{	// function(){} , ()=>{} this를 바인딩하기 위해서!!
-//			this.login(); //on 첫번째 파라미터:어떤 이벤트, 두번째 파라미터: 무엇을 할건지
-//		}); 		
+//		$("#btn-login").on("click",()=>{	
+//			this.login(); 
+//		}); 	
+
+		$("#btn-update").on("click",()=>{	
+			this.update(); 
+		}); 	
 	}, //여기 콤마 안 찍으면 save에 빨간줄 뜨네
 	
 	save: function(){
@@ -58,6 +62,28 @@ let index = {
 //			alert(JSON.stringify(error));
 //		}); 
 //	}
+
+	update: function(){
+		let data = {
+			id: $("#id").val(),
+			username: $("#username").val(),
+			password: $("#password").val(),
+			email: $("#email").val()
+		};
+		
+		$.ajax({
+			type: "PUT", 
+			url: "/user",
+			data: JSON.stringify(data), 
+			contentType: "application/json; charset=utf-8",
+			dataType: "json"
+		}).done(function(resp){
+			alert("회원정보수정이 완료되었습니다.");
+			location.href="/";	
+		}).fail(function(error){
+			alert(JSON.stringify(error));
+		}); 
+	},	
 }//여기까진 오브젝트라 아무일도 생기지 않아 joinForm.jsp에서 쫙 읽어질때 <script>를 읽으면 
 
 index.init();
